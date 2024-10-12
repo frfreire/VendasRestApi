@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VendasRestApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5dfd03f19f2016e44b4d3d211e05a540e1445349")]
 [assembly: System.Reflection.AssemblyProductAttribute("VendasRestApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VendasRestApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

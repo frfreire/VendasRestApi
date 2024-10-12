@@ -28,7 +28,7 @@ namespace VendasRestApi.Repository.impl
             return venda;
         }
 
-        public async Task<bool> ExcluirProdutoAsync(string Id)
+        public async Task<bool> CancelarVendaAsync(string Id)
         {
             await _vendas.DeleteOneAsync(v => v.Id == Id);
             return true;

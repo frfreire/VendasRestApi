@@ -38,29 +38,42 @@ namespace VendasRestApi.Service.impl
             return true;
         }
 
-        public Task<Produto> AtualizarProduto(string id, Produto produto)
+        public async Task<Produto> AtualizarProduto(string id, Produto produto)
         {
-           throw new NotImplementedException();
+           if(produto.QuantidadeEmEstoque < 0){
+            throw new ArgumentException("A quantidade em estoque não pode ser negativa");
+           }
+
+            await _produtoRepository.AtualizarProdutoAsync(id, produto);
+            return produto;
+
         }
 
-        public List<Task<Produto>> BuscaProdutos()
+        public async Task<List<Produto>> BuscaProdutos()
         {
-            throw new NotImplementedException();
+            return await _produtoRepository.ObterProdutosAsync();
         }
 
-        public Task<Produto> BuscarProdutoPorId(string Id)
+        public async Task<Produto> BuscarProdutoPorId(string Id)
         {
-            throw new NotImplementedException();
+            return await _produtoRepository.ObterProdutoPorId(Id);
         }
 
-        public Task<Produto> CriarProduto(Produto produto)
+        public async Task<Produto> CriarProduto(Produto produto)
         {
-            throw new NotImplementedException();
+            if(produto.QuantidadeEmEstoque < 0){
+                throw new ArgumentException("A quantidade em estoque não pode ser negativa");
+            }
+
+            await _produtoRepository.CriarProdutoAsync(produto);
+            return produto;
+
         }
 
-        public Task<bool> ExcluirProduto(string Id)
+        public async Task<bool> ExcluirProduto(string Id)
         {
-            throw new NotImplementedException();
+            await _produtoRepository.ExcluirProdutoAsync(Id);
+            return true;
         }
     }
 }

@@ -12,6 +12,6 @@ namespace VendasRestApi.Repository.interfaces
         public Task<Venda> ObterVendaPorId(String Id);
         public Task<Venda> CriarVendaAsync(Venda venda);
         public Task<Venda> AtualizarVendaAsync(String Id, Venda venda);
-        public Task<bool> ExcluirProdutoAsync(string Id);
+        public Task<bool> CancelarVendaAsync(string Id);
     }
 }
